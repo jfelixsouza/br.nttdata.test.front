@@ -52,5 +52,5 @@ ENTAO acesso a pagina com listagem das vagas disponiveis
 
 ### FINALIZAR ###
 
-# Test Teardown    
-#     Fechar navegador
+Test Teardown    
+    Fechar navegador
