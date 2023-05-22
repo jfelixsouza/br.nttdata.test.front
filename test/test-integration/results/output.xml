@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.11.1 on win32)" generated="20230522 07:50:49.070" rpa="false" schemaversion="3">
+<suite id="s1" name="Testes" source="C:\Users\Dell\OneDrive\Documentos\br.nttdata.test.front\test\test-integration\testes">
+<suite id="s1-s1" name="TestCases" source="C:\Users\Dell\OneDrive\Documentos\br.nttdata.test.front\test\test-integration\testes\TestCases.robot">
+<test id="s1-s1-t1" name="Test Setup" line="12">
+<kw name="Abrir navegador" library="Resource">
+<kw name="Open Browser" library="Selenium2Library">
+<arg>browser=${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230522 07:50:49.463" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20230522 07:50:49.462" endtime="20230522 07:50:51.496"/>
+</kw>
+<status status="PASS" starttime="20230522 07:50:49.462" endtime="20230522 07:50:51.496"/>
+</kw>
+<status status="PASS" starttime="20230522 07:50:49.457" endtime="20230522 07:50:51.496"/>
+</test>
+<test id="s1-s1-t2" name="Cenario 1 - Validar barra de pesquisa do Google" line="15">
+<kw name="DADO que acesso o site do Google" library="busca">
+<kw name="Go To" library="Selenium2Library">
+<arg>${HOME_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230522 07:50:51.499" level="INFO">Opening url 'https://www.google.com.br'</msg>
+<status status="PASS" starttime="20230522 07:50:51.498" endtime="20230522 07:50:52.573"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230522 07:50:52.730" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-377.png"&gt;&lt;img src="selenium-screenshot-377.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230522 07:50:52.573" endtime="20230522 07:50:52.730"/>
+</kw>
+<status status="PASS" starttime="20230522 07:50:51.498" endtime="20230522 07:50:52.730"/>
+</kw>
+<kw name="QUANDO digito a palavra NTTDATA na barra de pesquisa" library="busca">
+<kw name="Input Text" library="Selenium2Library">
+<arg>${HOME_PESQUISA}</arg>
+<arg>nttdata</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230522 07:50:52.730" level="INFO">Typing text 'nttdata' into text field 'q'.</msg>
+<status status="PASS" starttime="20230522 07:50:52.730" endtime="20230522 07:50:52.904"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230522 07:50:53.071" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-378.png"&gt;&lt;img src="selenium-screenshot-378.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230522 07:50:52.904" endtime="20230522 07:50:53.072"/>
+</kw>
+<kw name="Press Keys" library="Selenium2Library">
+<arg>${HOME_PESQUISA}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20230522 07:50:53.073" level="INFO">Sending key(s) ('ENTER',) to q element.</msg>
+<msg timestamp="20230522 07:50:53.417" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20230522 07:50:53.417" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20230522 07:50:53.072" endtime="20230522 07:50:55.858"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230522 07:50:55.992" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-379.png"&gt;&lt;img src="selenium-screenshot-379.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230522 07:50:55.858" endtime="20230522 07:50:55.992"/>
+</kw>
+<status status="PASS" starttime="20230522 07:50:52.730" endtime="20230522 07:50:55.993"/>
+</kw>
+<kw name="E clico no resultado da pesquisa" library="busca">
+<kw name="Click Element" library="Selenium2Library">
+<arg>//h3[@class='LC20lb MBeuO DKV0Md'][contains(.,'NTT DATA: Global IT Services Provider &amp; Consultant')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230522 07:50:55.996" level="INFO">Clicking element '//h3[@class='LC20lb MBeuO DKV0Md'][contains(.,'NTT DATA: Global IT Services Provider &amp; Consultant')]'.</msg>
+<status status="PASS" starttime="20230522 07:50:55.996" endtime="20230522 07:50:59.145"/>
+</kw>
+<status status="PASS" starttime="20230522 07:50:55.996" endtime="20230522 07:50:59.145"/>
+</kw>
+<kw name="ENTAO validamos que fui direcionado para a pagina da NTTDATA" library="busca">
+<kw name="Title Should Be" library="Selenium2Library">
+<arg>Global IT Services Provider &amp; Consultant | NTT DATA</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20230522 07:50:59.145" level="INFO">Page title is 'Global IT Services Provider &amp; Consultant | NTT DATA'.</msg>
+<status status="PASS" starttime="20230522 07:50:59.145" endtime="20230522 07:50:59.145"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230522 07:50:59.321" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-380.png"&gt;&lt;img src="selenium-screenshot-380.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230522 07:50:59.145" endtime="20230522 07:50:59.321"/>
+</kw>
+<status status="PASS" starttime="20230522 07:50:59.145" endtime="20230522 07:50:59.321"/>
+</kw>
+<doc>Teste para validar barra de pesquisa do Google</doc>
+<status status="PASS" starttime="20230522 07:50:51.497" endtime="20230522 07:50:59.321"/>
+</test>
+<test id="s1-s1-t3" name="Cenario 2 - Validar fluxo acesso a pagina para pesquisa de vagas disponiveis" line="24">
+<kw name="DADO que cenario 1 foi executado com sucesso" library="home">
+<kw name="Title Should Be" library="Selenium2Library">
+<arg>Global IT Services Provider &amp; Consultant | NTT DATA</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20230522 07:50:59.343" level="INFO">Page title is 'Global IT Services Provider &amp; Consultant | NTT DATA'.</msg>
+<status status="PASS" starttime="20230522 07:50:59.336" endtime="20230522 07:50:59.343"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230522 07:50:59.543" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-381.png"&gt;&lt;img src="selenium-screenshot-381.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230522 07:50:59.343" endtime="20230522 07:50:59.544"/>
+</kw>
+<status status="PASS" starttime="20230522 07:50:59.336" endtime="20230522 07:50:59.544"/>
+</kw>
+<kw name="QUANDO clico no menu Carreira" library="home">
+<kw name="Click Element" library="Selenium2Library">
+<arg>//a[contains(.,'Careers')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230522 07:50:59.546" level="INFO">Clicking element '//a[contains(.,'Careers')]'.</msg>
+<status status="PASS" starttime="20230522 07:50:59.545" endtime="20230522 07:50:59.630"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230522 07:50:59.831" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-382.png"&gt;&lt;img src="selenium-screenshot-382.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230522 07:50:59.630" endtime="20230522 07:50:59.832"/>
+</kw>
+<status status="PASS" starttime="20230522 07:50:59.544" endtime="20230522 07:50:59.832"/>
+</kw>
+<kw name="E Job Opportunities" library="home">
+<kw name="Click Element" library="Selenium2Library">
+<arg>//a[contains(.,'Job opportunities')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230522 07:50:59.833" level="INFO">Clicking element '//a[contains(.,'Job opportunities')]'.</msg>
+<status status="PASS" starttime="20230522 07:50:59.832" endtime="20230522 07:50:59.949"/>
+</kw>
+<status status="PASS" starttime="20230522 07:50:59.832" endtime="20230522 07:50:59.950"/>
+</kw>
+<kw name="ENTAO validamos que fomos direcionado para pagina das vagas disponiveis" library="home">
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230522 07:51:00.150" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-383.png"&gt;&lt;img src="selenium-screenshot-383.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230522 07:50:59.951" endtime="20230522 07:51:00.150"/>
+</kw>
+<status status="PASS" starttime="20230522 07:50:59.950" endtime="20230522 07:51:00.151"/>
+</kw>
+<doc>Teste para validar fluxo para visualizar vagas disponiveis</doc>
+<status status="PASS" starttime="20230522 07:50:59.321" endtime="20230522 07:51:00.151"/>
+</test>
+<test id="s1-s1-t4" name="Cenario 3 - Validar página da listagem de vagas" line="33">
+<kw name="DADO que o cenario 2 foi executados com sucesso" library="home">
+<kw name="Switch Window" library="Selenium2Library">
+<arg>title=Jobs</arg>
+<arg>browser=CURRENT</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" starttime="20230522 07:51:00.153" endtime="20230522 07:51:06.311"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>4s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230522 07:51:10.311" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20230522 07:51:06.311" endtime="20230522 07:51:10.311"/>
+</kw>
+<kw name="Title Should Be" library="Selenium2Library">
+<arg>Jobs</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20230522 07:51:10.317" level="INFO">Page title is 'Jobs'.</msg>
+<status status="PASS" starttime="20230522 07:51:10.311" endtime="20230522 07:51:10.317"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230522 07:51:10.480" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-384.png"&gt;&lt;img src="selenium-screenshot-384.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230522 07:51:10.317" endtime="20230522 07:51:10.480"/>
+</kw>
+<status status="PASS" starttime="20230522 07:51:00.153" endtime="20230522 07:51:10.480"/>
+</kw>
+<kw name="QUANDO insiro uma profissao no campo pesquisar" library="home">
+<arg>Arquiteto</arg>
+<kw name="Input Text" library="Selenium2Library">
+<arg>sGlobal</arg>
+<arg>${PROFISSAO_DESEJADA}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230522 07:51:10.480" level="INFO">Typing text 'Arquiteto' into text field 'sGlobal'.</msg>
+<status status="PASS" starttime="20230522 07:51:10.480" endtime="20230522 07:51:10.579"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230522 07:51:10.767" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-385.png"&gt;&lt;img src="selenium-screenshot-385.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230522 07:51:10.579" endtime="20230522 07:51:10.772"/>
+</kw>
+<kw name="Press Keys" library="Selenium2Library">
+<arg>sGlobal</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20230522 07:51:10.773" level="INFO">Sending key(s) ('ENTER',) to sGlobal element.</msg>
+<msg timestamp="20230522 07:51:11.127" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20230522 07:51:11.127" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20230522 07:51:10.772" endtime="20230522 07:51:11.136"/>
+</kw>
+<status status="PASS" starttime="20230522 07:51:10.480" endtime="20230522 07:51:11.136"/>
+</kw>
+<kw name="ENTAO acesso a pagina com listagem das vagas disponiveis" library="home">
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230522 07:51:11.307" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-386.png"&gt;&lt;img src="selenium-screenshot-386.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230522 07:51:11.136" endtime="20230522 07:51:11.307"/>
+</kw>
+<status status="PASS" starttime="20230522 07:51:11.136" endtime="20230522 07:51:11.307"/>
+</kw>
+<doc>Teste para validar pagina de listagem de vagas</doc>
+<status status="PASS" starttime="20230522 07:51:00.152" endtime="20230522 07:51:11.308"/>
+</test>
+<doc>Teste NTTDATA</doc>
+<status status="PASS" starttime="20230522 07:50:49.103" endtime="20230522 07:51:11.310"/>
+</suite>
+<status status="PASS" starttime="20230522 07:50:49.070" endtime="20230522 07:51:11.310"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="4" fail="0" skip="0" id="s1" name="Testes">Testes</stat>
+<stat pass="4" fail="0" skip="0" id="s1-s1" name="TestCases">Testes.TestCases</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
